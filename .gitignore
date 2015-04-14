@@ -1,0 +1,11 @@
+# Arquivos fontes compilados
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Arquivos de banco #
+*.log
+*.sqlite
