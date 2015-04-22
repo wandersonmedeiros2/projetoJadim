@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.ufrn.jardim.appjardim.MeuJardimActivity">
+    <item android:id="@+id/action_novo" android:title="@string/action_novoVaso"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_atualizar" android:title="@string/action_atualizar"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>
+<!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/menu/menu_meu_jardim.xml -->

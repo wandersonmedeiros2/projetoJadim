@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/ConnectGardenActionBar</item>
+    </style>
+
+    <style name="ConnectGardenActionBar" parent="Base.Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#33691E</item>
+        <item name="colorPrimaryDark">#C5E1A5</item>
+        <item name="colorControlActivated">#C5E1A5</item>
+    </style>
+
+</resources>

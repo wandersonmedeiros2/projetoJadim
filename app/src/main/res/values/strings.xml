@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppJardim</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_meu_jardim">Meu Jardim</string>
+    <string name="action_novoVaso">Novo Vaso</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="LabelAtualizar">Data da última atualização</string>
+    <string name="Hint_Descricao">Descricao</string>
+    <string name="LabelUmidadeSolo">Umid. Solo</string>
+    <string name="LabelUmidadeAr">Umid. Ar</string>
+    <string name="LabelLuminosidade">Luz</string>
+    <string name="LabelTemperatura">Temp.</string>
+    <string name="LabelDescricaoPlanta">Planta</string>
+    <string name="LabelTipoAlerta">Tipo de Alerta</string>
+    <string name="LabelAtivo">Ativo</string>
+    <string name="title_activity_meus_alertas">Meus Alertas</string>
+    <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
+
+</resources>

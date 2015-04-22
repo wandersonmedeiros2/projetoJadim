@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/iconeAlerta"
+        android:src="@drawable/ic_launcher"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Hint_Descricao"
+        android:id="@+id/labelDescricao"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iconeAlerta"
+        android:layout_toEndOf="@+id/iconeAlerta" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelDescricao"
+        android:layout_toRightOf="@+id/iconeAlerta"
+        android:layout_toEndOf="@+id/iconeAlerta"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imagemUmidSolo"
+                android:src="@drawable/ic_launcher"
+                android:layout_margin="2dp"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelUmidadeSolo"
+                android:id="@+id/labelUmidadeSolo"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:layout_marginLeft="6dp"
+                android:layout_column="1" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imagemUmidAr"
+                android:src="@drawable/ic_launcher"
+                android:layout_margin="2dp"
+                android:layout_column="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelUmidadeAr"
+                android:id="@+id/labelumidadear"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:layout_marginLeft="6dp"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageTemp"
+                android:src="@drawable/ic_launcher"
+                android:layout_margin="2dp"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelTemperatura"
+                android:id="@+id/labelTemp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:layout_marginLeft="6dp"
+                android:layout_column="1" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageLuz"
+                android:src="@drawable/ic_launcher"
+                android:layout_margin="2dp"
+                android:layout_column="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelLuminosidade"
+                android:id="@+id/labelLuz"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:layout_marginLeft="6dp"
+                android:layout_column="3" />
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>

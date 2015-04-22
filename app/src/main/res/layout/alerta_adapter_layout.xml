@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/iconeAlerta"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignBottom="@+id/tableLayout" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Hint_Descricao"
+        android:id="@+id/labelDescricao"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iconeAlerta"
+        android:layout_toEndOf="@+id/iconeAlerta" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelDescricao"
+        android:layout_toRightOf="@+id/iconeAlerta"
+        android:layout_toEndOf="@+id/iconeAlerta"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelDescricaoPlanta"
+                android:id="@+id/labelDescricaoVaso"
+                android:layout_margin="2dp"
+                android:layout_column="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelTipoAlerta"
+                android:layout_margin="2dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/labelTipoAlerta" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/LabelAtivo"
+                android:id="@+id/labelAtivo"
+                android:layout_margin="2dp"
+                android:layout_column="2" />
+        </TableRow>
+
+    </TableLayout>
+
+
+</RelativeLayout>
