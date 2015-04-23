@@ -6,21 +6,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class LoginActivity extends ActionBarActivity {
+
+    EditText login, senha;
+    TextView esqueci,cadastrar_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+
+        login = (EditText)findViewById(R.id.etLogin);
+        senha = (EditText)findViewById(R.id.etSenha);
+        esqueci = (TextView)findViewById(R.id.tvEsqueciSenha);
+        cadastrar_login = (TextView)findViewById(R.id.tvLogin);
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
@@ -39,23 +50,18 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public void executarMeuJardimActivity(View view){
-
-        Intent i = new Intent(this,MeuJardimActivity.class);
+    public void cadastrar(View v){
+        Intent i = new Intent(this,MeuCadastroActivity.class);
         startActivity(i);
-
     }
 
-    public void executarMeusAlertasActivity(View view){
+    public void esqueciSenha(View v){
+        //Intent i = new Intent(this,RecuperarSenhaActivity.class);
+        //startActivity(i);
+    }
 
-        Intent i = new Intent(this,MeusAlertasActivity.class);
+    public void menuPrincipal(View view) {
+        Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
-
     }
-
-    public void executarSair(View view) {
-
-    }
-
 }

@@ -18,5 +18,6 @@
     <string name="LabelAtivo">Ativo</string>
     <string name="title_activity_meus_alertas">Meus Alertas</string>
     <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
+    <string name="title_activity_login">Login</string>
 
 </resources>

@@ -179,6 +179,8 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">AppJardim</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
     <string name="title_activity_meu_jardim">Meu Jardim</string>
     <string name="title_activity_meus_alertas">Meus Alertas</string>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/styles.xml -->
