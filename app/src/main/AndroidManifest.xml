@@ -13,7 +13,7 @@
         </activity>
         <activity
             android:name=".MeuJardimActivity"
-            android:label="@string/title_activity_meu_jardim">
+            android:label="@string/title_activity_meu_jardim" >
         </activity>
         <activity
             android:name=".MeusAlertasActivity"
@@ -21,9 +21,8 @@
         </activity>
         <activity
             android:name=".MeuCadastroActivity"
-            android:label="@string/title_activity_meu_cadastro"
             android:configChanges="orientation|screenSize"
-            >
+            android:label="@string/title_activity_meu_cadastro" >
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -33,6 +32,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SobreActivity"
+            android:label="@string/title_activity_sobre" >
         </activity>
     </application>
 

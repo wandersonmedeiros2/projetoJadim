@@ -81,19 +81,8 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btConfiguracoes"
-            android:layout_gravity="left|center_vertical"
-            android:src="@drawable/ic_launcher"
-            android:onClick="executarConfiguracoesActivity"
-
-
-            />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/btAtualizar"
-            android:layout_gravity="center"
+            android:layout_gravity="left|center_vertical"
             android:src="@drawable/ic_launcher"
             android:onClick="executarSincronizacao"
 
@@ -103,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btSobre"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="center"
             android:src="@drawable/ic_launcher"
             android:onClick="executarSobreActivity"
 
@@ -113,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btSair"
-            android:layout_gravity="left|bottom"
+            android:layout_gravity="right|center_vertical"
             android:src="@drawable/ic_launcher"
             android:onClick="executarSair"
 

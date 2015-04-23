@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -56,7 +57,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void executarSair(View view) {
 
-
+       finish();
 
     }
 
@@ -64,6 +65,19 @@ public class MainActivity extends ActionBarActivity {
 
         Intent i = new Intent(this,MeuCadastroActivity.class);
         startActivity(i);
+    }
+
+    public void executarSobreActivity (View view){
+
+        Intent i = new Intent(this,SobreActivity.class);
+        startActivity(i);
+
+    }
+
+    public void executarSincronizacao(View view){
+
+        Toast.makeText(this,"Atualizando...",Toast.LENGTH_LONG).show();
+
     }
 
 }

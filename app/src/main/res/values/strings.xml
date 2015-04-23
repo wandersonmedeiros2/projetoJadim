@@ -24,9 +24,13 @@
     <string name="LabelLogin">Login</string>
     <string name="LabelSenha">Senha</string>
     <string name="LabelNome">Nome</string>
-    <string name="LabelNick" >Nick</string>
-    <string name="LabelEmail" >E-Mail</string>
+    <string name="LabelNick">Nick</string>
+    <string name="LabelEmail">E-Mail</string>
     <string name="TextBTConfirmar">Confirmar</string>
     <string name="LabelConfirmarSenha">Confirmar Senha</string>
+    <string name="title_activity_sobre">Sobre</string>
+    <string name="LabelDesenvolvimento">Desenvolvimento</string>
+    <string name="LabelDesignInterface">Design Interface</string>
+    <string name="LabelOrientadores">Orientadores</string>
 
 </resources>
