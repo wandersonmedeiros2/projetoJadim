@@ -52,6 +52,7 @@ public class VasoListAdapter extends ArrayAdapter<Vaso> {
         imagemTemp.setImageResource(R.drawable.ic_launcher);
         imagemLuz.setImageResource(R.drawable.ic_launcher);
 
+
         Vaso vaso = this.values.get(position);
 
         if(vaso.getImagem() == ""){

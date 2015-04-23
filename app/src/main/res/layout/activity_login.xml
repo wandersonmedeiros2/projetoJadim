@@ -51,10 +51,10 @@
         android:layout_alignEnd="@+id/etLogin" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="75dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/ivLogo"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/icon"
         android:layout_marginRight="122dp"
         android:layout_marginEnd="122dp"
         android:layout_alignParentTop="true"
