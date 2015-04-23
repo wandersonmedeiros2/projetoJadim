@@ -20,7 +20,7 @@
     <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
     <string name="title_activity_login">Login</string>
     <string name="LabelRecuperarSenha">Recuperar senha</string>
-    <string name="LabelCadastrar">Cadastar</string>
+    <string name="LabelCadastrar">Cadastrar</string>
     <string name="LabelLogin">Login</string>
     <string name="LabelSenha">Senha</string>
 
