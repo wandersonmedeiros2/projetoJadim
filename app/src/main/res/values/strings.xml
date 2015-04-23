@@ -19,5 +19,7 @@
     <string name="title_activity_meus_alertas">Meus Alertas</string>
     <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
     <string name="title_activity_login">Login</string>
+    <string name="LabelRecuperarSenha">Recuperar senha</string>
+    <string name="LabelCadastrar">Cadastar</string>
 
 </resources>

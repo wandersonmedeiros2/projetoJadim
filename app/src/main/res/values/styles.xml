@@ -1,16 +1,23 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="android:actionBarStyle">@style/ConnectGardenActionBar</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/ConnectGardenActionBar</item>
     </style>
 
-    <style name="ConnectGardenActionBar" parent="Base.Theme.AppCompat.Light">
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="ConnectGardenActionBar" parent="Widget.AppCompat.Light.ActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#33691E</item>
-        <item name="colorPrimaryDark">#C5E1A5</item>
-        <item name="colorControlActivated">#C5E1A5</item>
+        <item name="android:background">@color/verdeEscuro</item>
+        <item name="background">@color/verdeEscuro</item>
+        <item name="android:textColor">@color/branco</item>
     </style>
 
 </resources>
