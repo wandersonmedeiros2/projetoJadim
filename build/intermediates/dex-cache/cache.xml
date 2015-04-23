@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/wanderson/git/projetoJardim/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7dcef4acd4e596c49fd7ab0f81d9ee66ffe92ed0.jar" />
-    </item>
-    <item
         jar="/home/wanderson/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.1"
@@ -28,6 +21,13 @@
         revision="21.1.1"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/home/wanderson/git/projetoJardim/app/build/intermediates/pre-dexed/debug/classes-710b42c705fe7e21e8e60c5bf3d2242ce94f8e27.jar" />
+    </item>
+    <item
+        jar="/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/wanderson/git/projetoJardim/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7dcef4acd4e596c49fd7ab0f81d9ee66ffe92ed0.jar" />
     </item>
 
 </items>
