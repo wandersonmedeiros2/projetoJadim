@@ -21,7 +21,9 @@
         </activity>
         <activity
             android:name=".MeuCadastroActivity"
-            android:label="@string/title_activity_meu_cadastro" >
+            android:label="@string/title_activity_meu_cadastro"
+            android:configChanges="orientation|screenSize"
+            >
         </activity>
         <activity
             android:name=".LoginActivity"

@@ -56,6 +56,14 @@ public class MainActivity extends ActionBarActivity {
 
     public void executarSair(View view) {
 
+
+
+    }
+
+    public void executarCadastroUsuarioActivity(View view){
+
+        Intent i = new Intent(this,MeuCadastroActivity.class);
+        startActivity(i);
     }
 
 }

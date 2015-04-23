@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class LoginActivity extends ActionBarActivity {
 
+    private static final int FOTO = 1;
     EditText login, senha;
     TextView esqueci,cadastrar_login;
 
@@ -49,6 +50,8 @@ public class LoginActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     public void cadastrar(View v){
         Intent i = new Intent(this,MeuCadastroActivity.class);
