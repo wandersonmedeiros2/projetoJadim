@@ -19,5 +19,12 @@
     <string name="title_activity_meus_alertas">Meus Alertas</string>
     <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
     <string name="title_activity_login">Login</string>
+    <string name="LabelNome">Nome</string>
+    <string name="LabelNick">Nick</string>
+    <string name="LabelEmail">E-Mail</string>
+    <string name="LabelLogin">Login</string>
+    <string name="LabelSenha" >Senha</string>
+    <string name="LabelConfirmarSenha">Confirmar Senha</string>
+    <string name="TextoBTConfirmar" >Confirmar</string>
 
 </resources>

@@ -148,12 +148,19 @@
     <string name="Hint_Descricao">Descricao</string>
     <string name="LabelAtivo">Ativo</string>
     <string name="LabelAtualizar">Data da última atualização</string>
+    <string name="LabelConfirmarSenha">Confirmar Senha</string>
     <string name="LabelDescricaoPlanta">Planta</string>
+    <string name="LabelEmail">E-Mail</string>
+    <string name="LabelLogin">Login</string>
     <string name="LabelLuminosidade">Luz</string>
+    <string name="LabelNick">Nick</string>
+    <string name="LabelNome">Nome</string>
+    <string name="LabelSenha">Senha</string>
     <string name="LabelTemperatura">Temp.</string>
     <string name="LabelTipoAlerta">Tipo de Alerta</string>
     <string name="LabelUmidadeAr">Umid. Ar</string>
     <string name="LabelUmidadeSolo">Umid. Solo</string>
+    <string name="TextoBTConfirmar">Confirmar</string>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
