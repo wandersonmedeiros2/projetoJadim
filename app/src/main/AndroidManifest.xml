@@ -35,7 +35,12 @@
         </activity>
         <activity
             android:name=".SobreActivity"
-            android:label="@string/title_activity_sobre" >
+            android:label="@string/title_activity_sobre"
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name=".Editar_vaso"
+            android:label="@string/title_activity_editar_vaso" >
         </activity>
     </application>
 

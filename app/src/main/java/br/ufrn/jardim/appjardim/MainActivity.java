@@ -79,6 +79,11 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         {
             case 1: i = new Intent(this,MeuJardimActivity.class);break;
             case 2: i = new Intent(this,MeusAlertasActivity.class);break;
+            case 3: i = new Intent(this,MeuCadastroActivity.class);break;
+            //case 4: i = new Intent(this,Editar_vaso.class);break;
+            //case 5: i = new Intent(this,Atualizar_vaso.class);break;
+            case 6: i = new Intent(this,SobreActivity.class);break;
+            case 7: i = null;finish();break;
             default : Toast.makeText(this, "item no: " + position + "-Selected", Toast.LENGTH_SHORT).show(); i = null;
         }
 

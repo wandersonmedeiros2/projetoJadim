@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/myPrimaryDarkColor</item>
         <item name="colorAccent">@color/myAccentColor</item>
         <item name="android:textColorPrimary">@color/myTextPrimaryColor</item>
+        <item name="android:textColor">@color/myTextColor</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 
         <item name="android:windowBackground">@color/myWindowBackground</item>

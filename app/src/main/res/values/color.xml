@@ -5,9 +5,10 @@
     <color name="myAccentColor">#AED581</color>
     <color name="myDrawerBackground">#DCEDC8</color>
     <!--<color name="myWindowBackground">#9CCC65</color>-->
-    <color name="myWindowBackground">#9CCC65</color>
+    <color name="myWindowBackground">#DCEDC8</color>
     <!--<color name="myTextPrimaryColor">#FFFFFF</color>-->
-    <color name="myTextPrimaryColor">#FFFFFF</color>
+    <color name="myTextPrimaryColor">#000000</color>
+    <color name="myTextColor">#000000</color>
     <color name="myNavigationColor">#000000</color>
     <color name="selection">#8BC34A</color>
 </resources>

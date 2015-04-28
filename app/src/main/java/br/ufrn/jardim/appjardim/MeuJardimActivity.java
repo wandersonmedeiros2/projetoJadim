@@ -25,7 +25,7 @@ public class MeuJardimActivity extends ActionBarActivity {
 
     public void inicializaComponentes(){
 
-        toobarPrincipal = (Toolbar) findViewById(R.id.toolbarPincipal);
+        toobarPrincipal = (Toolbar) findViewById(R.id.toolbar_actionbar_meu_jardim);
         setSupportActionBar(toobarPrincipal);
 
         listVasos = (ListView) findViewById(R.id.listVasos);

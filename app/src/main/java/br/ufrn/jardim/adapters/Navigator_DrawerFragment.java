@@ -113,10 +113,10 @@ public class Navigator_DrawerFragment extends Fragment implements DrawerCallback
 
     public List<NavigationItem> getMenu() {
         List<NavigationItem> items = new ArrayList<NavigationItem>();
-        items.add(new NavigationItem("Inicio", getResources().getDrawable(R.drawable.ic_launcher)));
+        items.add(new NavigationItem("Inicio", getResources().getDrawable(R.drawable.icon)));
         items.add(new NavigationItem("Meu Jardim ", getResources().getDrawable(R.drawable.jardim)));
         items.add(new NavigationItem("Meus Alertas ", getResources().getDrawable(R.drawable.flag)));
-        items.add(new NavigationItem("Meu Cadastro ", getResources().getDrawable(R.drawable.user)));
+        items.add(new NavigationItem("Meu Cadastro ", getResources().getDrawable(R.drawable.user_green)));
         items.add(new NavigationItem("Configurações ", getResources().getDrawable(R.drawable.config)));
         items.add(new NavigationItem("Atualizar ", getResources().getDrawable(R.drawable.refresh)));
         items.add(new NavigationItem("Sobre ", getResources().getDrawable(R.drawable.information)));

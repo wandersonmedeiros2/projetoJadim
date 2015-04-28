@@ -25,7 +25,7 @@ public class MeusAlertasActivity extends ActionBarActivity {
 
     public void inicializaComponentes(){
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar_meus_alertas);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 

@@ -29,8 +29,9 @@ public class MeuCadastroActivity extends ActionBarActivity {
 
         btConfirmar = (Button) findViewById(R.id.btConfirmar);
         imageFoto = (ImageView) findViewById(R.id.imageFoto);
+        imageFoto.setImageResource(R.drawable.user_green);
 
-        toobarPrincipal = (Toolbar) findViewById(R.id.toolbarPincipal);
+        toobarPrincipal = (Toolbar) findViewById(R.id.toolbar_actionbar_cadastro);
         setSupportActionBar(toobarPrincipal);
 
     }
