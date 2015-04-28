@@ -47,10 +47,10 @@ public class AlertaListAdapter extends ArrayAdapter<Alerta> {
         Alerta alerta = this.values.get(position);
 
         if(alerta.getImagem() == ""){
-            iconeAlerta.setImageResource(R.drawable.ic_launcher);
+            iconeAlerta.setImageResource(R.drawable.flag);
         }
         else
-            iconeAlerta.setImageResource(R.drawable.ic_launcher);
+            iconeAlerta.setImageResource(R.drawable.flag);
 
         lbDescrcao.setText(alerta.getDescricao());
 

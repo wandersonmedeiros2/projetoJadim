@@ -1,29 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:actionBarStyle">@style/ConnectGardenActionBar</item>
-        <!-- Support library compatibility -->
-        <item name="actionBarStyle">@style/ConnectGardenActionBar</item>
+        <item name="colorPrimary">@color/actionbarbackground</item>
+        <item name="colorPrimaryDark">@color/myPrimaryDarkColor</item>
+        <item name="colorAccent">@color/myAccentColor</item>
+        <item name="android:textColorPrimary">@color/myTextPrimaryColor</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <item name="android:windowBackground">@color/myWindowBackground</item>
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
     </style>
 
-    <style name="ConnectGardenActionBar" parent="Widget.AppCompat.Light.ActionBar">
-        <!-- Customize your theme here. -->
-        <item name="android:background">@color/verdeEscuro</item>
-        <item name="background">@color/verdeEscuro</item>
-        <item name="android:textColorPrimary">@color/branco</item>
-        <item name="android:textColorSecondary">@color/branco</item>
-    </style>
-
-    <style name="ConnectGardenActionBarSubMenu" parent="Widget.AppCompat.Light.ActionBar">
-        <item name="android:background">@color/branco</item>
-        <item name="android:textColor">#000000</item>
+    <style name="ToolBarStyle" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 
 </resources>

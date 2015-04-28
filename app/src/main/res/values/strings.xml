@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AppJardim</string>
+    <string name="app_name">Connected Garden</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
     <string name="title_activity_meu_jardim">Meu Jardim</string>
     <string name="action_novoVaso">Novo Vaso</string>
     <string name="action_atualizar">Atualizar</string>
@@ -32,5 +32,8 @@
     <string name="LabelDesenvolvimento">Desenvolvimento</string>
     <string name="LabelDesignInterface">Design Interface</string>
     <string name="LabelOrientadores">Orientadores</string>
+
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
 
 </resources>

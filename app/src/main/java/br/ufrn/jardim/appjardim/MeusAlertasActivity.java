@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,14 +17,28 @@ import br.ufrn.jardim.modelo.Alerta;
 
 
 public class MeusAlertasActivity extends ActionBarActivity {
-    Toolbar toobarPrincipal;
+    private Toolbar mToolbar;
+    
+
     ListView listAlertas;
 
 
     public void inicializaComponentes(){
 
-        toobarPrincipal = (Toolbar) findViewById(R.id.toolbarPincipal);
-        setSupportActionBar(toobarPrincipal);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        mToolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                }
+                return false;
+            }
+        });
+
 
         listAlertas = (ListView) findViewById(R.id.listAlertas);
 

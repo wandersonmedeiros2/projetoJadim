@@ -47,19 +47,19 @@ public class VasoListAdapter extends ArrayAdapter<Vaso> {
         TextView lbTemp     = (TextView) linhaVasoAdapter.findViewById(R.id.labelTemp);
         TextView lbLuz      = (TextView) linhaVasoAdapter.findViewById(R.id.labelLuz);
 
-        imagemUmidAr.setImageResource(R.drawable.ic_launcher);
-        imagemUmidSolo.setImageResource(R.drawable.ic_launcher);
-        imagemTemp.setImageResource(R.drawable.ic_launcher);
-        imagemLuz.setImageResource(R.drawable.ic_launcher);
+        imagemUmidAr.setImageResource(R.drawable.umid_ar);
+        imagemUmidSolo.setImageResource(R.drawable.umid_solo);
+        imagemTemp.setImageResource(R.drawable.temp);
+        imagemLuz.setImageResource(R.drawable.sol);
 
 
         Vaso vaso = this.values.get(position);
 
         if(vaso.getImagem() == ""){
-            imagemPlanta.setImageResource(R.drawable.ic_launcher);
+            imagemPlanta.setImageResource(R.drawable.jardim);
         }
         else
-            imagemPlanta.setImageResource(R.drawable.ic_launcher);
+            imagemPlanta.setImageResource(R.drawable.jardim);
 
         lbDescrcao.setText(vaso.getDescricao());
         lbUmidAr.setText(String.valueOf(vaso.getAtumidadeAr()));
