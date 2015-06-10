@@ -23,4 +23,8 @@
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 
+    <style name="Listas">
+        <item name="android:textColor">@color/myTextColor</item>
+    </style>
+
 </resources>

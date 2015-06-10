@@ -32,9 +32,13 @@
     <string name="LabelDesenvolvimento">Desenvolvimento</string>
     <string name="LabelDesignInterface">Design Interface</string>
     <string name="LabelOrientadores">Orientadores</string>
-
     <string name="drawer_open">Menu opened</string>
     <string name="drawer_close">Menu closed</string>
     <string name="title_activity_editar_vaso">Editar_vaso</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_configuracoes">Configuracoes</string>
+    <string name="Menu_NovoVaso">Novo Vaso</string>
+    <string name="Menu_Alerta">Novo Alerta</string>
+    <string name="Menu_ParearVaso">Parear Vasos</string>
 
 </resources>

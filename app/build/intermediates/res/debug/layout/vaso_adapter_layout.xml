@@ -17,6 +17,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/Hint_Descricao"
         android:id="@+id/labelDescricao"
+        style="@style/Listas"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iconeAlerta"
         android:layout_toEndOf="@+id/iconeAlerta" />

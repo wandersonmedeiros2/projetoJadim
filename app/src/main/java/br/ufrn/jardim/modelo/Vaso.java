@@ -1,11 +1,16 @@
 package br.ufrn.jardim.modelo;
 
+import java.io.Serializable;
+
 /**
  * Created by wanderson on 21/04/15.
  */
-public class Vaso {
+public class Vaso implements Serializable {
+
+    public static String[] COLUNAS = new String[]{"ID","DESCRICAO","UMIDADE_AR","TEMP","UMIDADE_SOLO","LUZ"};
 
     //valore configurados
+    private int id;
     private int umidadeSolo;
     private int umidadeAr;
     private int temperatura;
@@ -132,5 +137,13 @@ public class Vaso {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id = id;
     }
 }

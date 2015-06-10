@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/array.xml -->
+    <eat-comment/>
+    <string-array name="listArray">
+        <item>Headings</item>
+        <item>Headings and Details</item>
+        <item>All Data</item>
+    </string-array>
+    <string-array name="listValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -18,6 +30,11 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="actionbarbackground">#558B2F</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
@@ -45,6 +62,17 @@
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="myAccentColor">#AED581</color>
+    <color name="myDrawerBackground">#DCEDC8</color>
+    <color name="myNavigationColor">#000000</color>
+    <color name="myPrimaryDarkColor">#33691E</color>
+    <color name="myTextColor">#000000</color>
+    <color name="myTextPrimaryColor">#000000</color>
+    <color name="myWindowBackground">#DCEDC8</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
     <color name="primary_material_dark">#ff212121</color>
@@ -59,6 +87,11 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="selection">#8BC34A</color>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
@@ -133,6 +166,12 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
@@ -148,12 +187,27 @@
     <string name="Hint_Descricao">Descricao</string>
     <string name="LabelAtivo">Ativo</string>
     <string name="LabelAtualizar">Data da última atualização</string>
+    <string name="LabelCadastrar">Cadastrar</string>
+    <string name="LabelConfirmarSenha">Confirmar Senha</string>
     <string name="LabelDescricaoPlanta">Planta</string>
+    <string name="LabelDesenvolvimento">Desenvolvimento</string>
+    <string name="LabelDesignInterface">Design Interface</string>
+    <string name="LabelEmail">E-Mail</string>
+    <string name="LabelLogin">Login</string>
     <string name="LabelLuminosidade">Luz</string>
+    <string name="LabelNick">Nick</string>
+    <string name="LabelNome">Nome</string>
+    <string name="LabelOrientadores">Orientadores</string>
+    <string name="LabelRecuperarSenha">Recuperar senha</string>
+    <string name="LabelSenha">Senha</string>
     <string name="LabelTemperatura">Temp.</string>
     <string name="LabelTipoAlerta">Tipo de Alerta</string>
     <string name="LabelUmidadeAr">Umid. Ar</string>
     <string name="LabelUmidadeSolo">Umid. Solo</string>
+    <string name="Menu_Alerta">Novo Alerta</string>
+    <string name="Menu_NovoVaso">Novo Vaso</string>
+    <string name="Menu_ParearVaso">Parear Vasos</string>
+    <string name="TextBTConfirmar">Confirmar</string>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -176,18 +230,31 @@
     <eat-comment/>
     <string name="action_atualizar">Atualizar</string>
     <string name="action_novoVaso">Novo Vaso</string>
-    <string name="action_settings">Settings</string>
-    <string name="app_name">AppJardim</string>
+    <string name="action_settings">Configurações</string>
+    <string name="app_name">Connected Garden</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_configuracoes">Configuracoes</string>
+    <string name="title_activity_editar_vaso">Editar_vaso</string>
     <string name="title_activity_login">Login</string>
-    <string name="title_activity_meu_cadastro">MeuCadastroActivity</string>
+    <string name="title_activity_meu_cadastro">Meu Cadastro</string>
     <string name="title_activity_meu_jardim">Meu Jardim</string>
     <string name="title_activity_meus_alertas">Meus Alertas</string>
+    <string name="title_activity_sobre">Sobre</string>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:actionBarStyle">@style/ConnectGardenActionBar</item>
+        <item name="colorPrimary">@color/actionbarbackground</item>
+        <item name="colorPrimaryDark">@color/myPrimaryDarkColor</item>
+        <item name="colorAccent">@color/myAccentColor</item>
+        <item name="android:textColorPrimary">@color/myTextPrimaryColor</item>
+        <item name="android:textColor">@color/myTextColor</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <item name="android:windowBackground">@color/myWindowBackground</item>
     </style>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
@@ -945,11 +1012,12 @@
     </style>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="ConnectGardenActionBar" parent="Base.Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">#33691E</item>
-        <item name="colorPrimaryDark">#C5E1A5</item>
-        <item name="colorControlActivated">#C5E1A5</item>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    <style name="Listas">
+        <item name="android:textColor">@color/myTextColor</item>
     </style>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
@@ -1184,6 +1252,14 @@
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
     <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="ToolBarStyle" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+    <!-- From: file:/home/wanderson/git/projetoJardim/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar"/>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid"/>
     <style name="Widget.AppCompat.ActionBar.TabBar" parent="Base.Widget.AppCompat.ActionBar.TabBar"/>

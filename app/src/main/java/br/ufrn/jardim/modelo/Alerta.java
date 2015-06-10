@@ -1,12 +1,17 @@
 package br.ufrn.jardim.modelo;
 
+import java.io.Serializable;
+
 import br.ufrn.jardim.constantes.ConstantesAlerta;
 
 /**
  * Created by wanderson on 21/04/15.
  */
-public class Alerta {
+public class Alerta implements Serializable {
 
+    public static String[] COLUNAS = new String[]{"ID","DESCRICAO","ATIVO"};
+
+    private int id;
     private int tipoAlerta;
     private boolean ativo;
     private String descricao;
@@ -74,4 +79,21 @@ public class Alerta {
     public void setVaso(Vaso vaso) {
         this.vaso = vaso;
     }
+
+    public int getAtivo() {
+        if (ativo){
+            return 1;
+        }
+        else
+            return 0;
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id = id;
+    }
+
 }

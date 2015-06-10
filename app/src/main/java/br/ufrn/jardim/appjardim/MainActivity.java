@@ -1,5 +1,8 @@
 package br.ufrn.jardim.appjardim;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -9,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.Toast;
 import br.ufrn.jardim.adapters.DrawerCallbacks;
@@ -19,6 +23,15 @@ import br.ufrn.jardim.adapters.Navigator_DrawerFragment;
 public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
 
     private Toolbar mToolbar;
+    FragmentManager fm;
+
+    //Fragments
+    MeuJardimFragment fragment_MeuJardim;
+    MeusAlertasFragment fragment_MeusAlertas;
+    ConfiguracoesFragment fragment_Configuracoes;
+    MeuCadastroFragment fragment_Cadastro;
+
+
     ListView listVasos;
 
     private Navigator_DrawerFragment mNavigationNavDrawerFragment;
@@ -45,6 +58,9 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         mNavigationNavDrawerFragment = (Navigator_DrawerFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
         mNavigationNavDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
 
+        fm = getFragmentManager();
+        fragment_MeuJardim = new MeuJardimFragment();
+        addFragment(fragment_MeuJardim);
 
     }
 
@@ -74,13 +90,24 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     @Override
     public void onNavigationDrawerItemSelected(int position) {
 
-        Intent i;
+        Intent i = null;
         switch (position)
         {
-            case 1: i = new Intent(this,MeuJardimActivity.class);break;
-            case 2: i = new Intent(this,MeusAlertasActivity.class);break;
-            case 3: i = new Intent(this,MeuCadastroActivity.class);break;
-            //case 4: i = new Intent(this,Editar_vaso.class);break;
+            case 1:
+                   fragment_MeuJardim = new MeuJardimFragment();
+                   replaceFragment(fragment_MeuJardim);
+                   break;
+            case 2:
+                fragment_MeusAlertas = new MeusAlertasFragment();
+                replaceFragment(fragment_MeusAlertas);
+                break;
+            case 3:
+                fragment_Cadastro = new MeuCadastroFragment();
+                replaceFragment(fragment_Cadastro);
+                break;
+            case 4:
+                fragment_Configuracoes = new ConfiguracoesFragment();
+                replaceFragment(fragment_Configuracoes);
             //case 5: i = new Intent(this,Atualizar_vaso.class);break;
             case 6: i = new Intent(this,SobreActivity.class);break;
             case 7: i = null;finish();break;
@@ -91,9 +118,6 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         {
             startActivity(i);
         }
-
-
-
     }
 
     @Override
@@ -102,6 +126,26 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
             mNavigationNavDrawerFragment.closeDrawer();
         else
             super.onBackPressed();
+    }
+
+
+    private void addFragment(Fragment fragment){
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.cenario,fragment);
+        ft.commit();
+    }
+
+
+    private void replaceFragment(Fragment fragment){
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.cenario,fragment);
+        ft.commit();
+    }
+
+    private void removeFragment(Fragment fragment){
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.remove(fragment);
+        ft.commit();
     }
 
 

@@ -16,6 +16,11 @@
         <activity
             android:name="br.ufrn.jardim.appjardim.MainActivity"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="br.ufrn.jardim.appjardim.MeuJardimActivity"
@@ -27,17 +32,33 @@
         </activity>
         <activity
             android:name="br.ufrn.jardim.appjardim.MeuCadastroActivity"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_meu_cadastro" >
         </activity>
         <activity
             android:name="br.ufrn.jardim.appjardim.LoginActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity
+            android:name="br.ufrn.jardim.appjardim.SobreActivity"
+            android:label="@string/title_activity_sobre"
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="br.ufrn.jardim.appjardim.Editar_vaso"
+            android:label="@string/title_activity_editar_vaso" >
+        </activity>
+        <activity
+            android:name="br.ufrn.jardim.appjardim.Configuracoes"
+            android:label="@string/title_activity_configuracoes" >
+        </activity>
+        <activity
+            android:name="br.ufrn.jardim.appjardim.ConfiguracoesActivity"
+            android:label="@string/title_activity_configuracoes" >
+        </activity>
+        <activity
+            android:name="android.support.v7.widget.TestActivity"
+            android:label="RecyclerViewTestActivity" />
     </application>
 
 </manifest>

@@ -1,6 +1,9 @@
 package br.ufrn.jardim.appjardim;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,11 +23,20 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        SharedPreferences prefs = this.getApplicationContext().getSharedPreferences("PREFERENCIAS", Context.MODE_PRIVATE);
 
         login = (EditText)findViewById(R.id.etLogin);
         senha = (EditText)findViewById(R.id.etSenha);
         esqueci = (TextView)findViewById(R.id.tvEsqueciSenha);
         cadastrar_login = (TextView)findViewById(R.id.tvLogin);
+
+        if(prefs.getInt("conectado",0) == 1)
+        {
+            login.setText(prefs.getString("senha",""));
+            login.setText(prefs.getString("senha",""));
+        }
+
+
 
     }
 

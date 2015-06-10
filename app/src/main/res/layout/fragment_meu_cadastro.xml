@@ -1,0 +1,170 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufrn.jardim.appjardim.MeuCadastroFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/imageFoto"
+                android:src="@drawable/ic_launcher"
+                android:onClick="carregarFoto"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="22dp"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditNome"
+                android:layout_below="@+id/labelNome"
+                android:layout_alignLeft="@+id/labelNome"
+                android:layout_alignStart="@+id/labelNome" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/LabelNome"
+                android:id="@+id/labelNome"
+                android:layout_marginLeft="136dp"
+                android:layout_marginStart="136dp"
+                android:layout_alignTop="@+id/imageFoto"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/LabelNick"
+                android:id="@+id/labelNick"
+                android:layout_below="@+id/EditNome"
+                android:layout_alignLeft="@+id/EditNome"
+                android:layout_alignStart="@+id/EditNome" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditNick"
+                android:layout_below="@+id/labelNick"
+                android:layout_alignLeft="@+id/labelNick"
+                android:layout_alignStart="@+id/labelNick"
+                android:layout_alignRight="@+id/EditNome"
+                android:layout_alignEnd="@+id/EditNome" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/labelEmail"
+                android:layout_marginTop="126dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/LabelEmail"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editEmail"
+                android:layout_below="@+id/labelEmail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LabelLogin"
+                android:id="@+id/labelLogin"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/editEmail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editLogin"
+                android:layout_below="@+id/labelLogin"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LabelSenha"
+                android:id="@+id/labelSenha"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/editLogin"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editSenha"
+                android:layout_below="@+id/labelSenha"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelConfirmarSenha"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginTop="17dp"
+                android:layout_below="@+id/editSenha"
+                android:layout_toLeftOf="@+id/EditNick"
+                android:layout_toStartOf="@+id/EditNick"
+                android:text="@string/LabelConfirmarSenha" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editConfirmar"
+                android:layout_below="@+id/labelConfirmarSenha"
+                android:layout_alignRight="@+id/editSenha"
+                android:layout_alignEnd="@+id/editSenha" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btConfirmar"
+                android:layout_below="@+id/editConfirmar"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/TextBTConfirmar"
+                android:layout_marginTop="10dp"
+                android:onClick="confirmarCadastro"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

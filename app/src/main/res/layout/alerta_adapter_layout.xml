@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content">
 
 
     <ImageView
@@ -17,6 +17,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/Hint_Descricao"
         android:id="@+id/labelDescricao"
+        style="@style/Listas"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iconeAlerta"
         android:layout_toEndOf="@+id/iconeAlerta" />
