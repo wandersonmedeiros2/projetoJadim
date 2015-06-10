@@ -43,12 +43,12 @@
             android:label="@string/title_activity_editar_vaso" >
         </activity>
         <activity
-            android:name=".Configuracoes"
+            android:name=".ConfiguracoesActivity"
             android:label="@string/title_activity_configuracoes" >
         </activity>
         <activity
-            android:name=".ConfiguracoesActivity"
-            android:label="@string/title_activity_configuracoes" >
+            android:name=".CadastrarAlertaActivity"
+            android:label="@string/title_activity_cadastrar_alerta" >
         </activity>
     </application>
 

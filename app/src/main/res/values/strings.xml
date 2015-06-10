@@ -40,5 +40,7 @@
     <string name="Menu_NovoVaso">Novo Vaso</string>
     <string name="Menu_Alerta">Novo Alerta</string>
     <string name="Menu_ParearVaso">Parear Vasos</string>
+    <string name="title_activity_novo_vaso">NovoVasoActivity</string>
+    <string name="title_activity_cadastrar_alerta">CadastrarAlertaActivity</string>
 
 </resources>
