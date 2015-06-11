@@ -57,6 +57,14 @@
             android:name=".DispPareadosActivity"
             android:label="@string/title_activity_disp_pareados" >
         </activity>
+        <activity
+            android:name=".CadastrarVaso"
+            android:label="@string/title_activity_cadastrar_vaso" >
+        </activity>
+        <activity
+            android:name=".ProcurarDispositivosBluetooth"
+            android:label="@string/title_activity_procurar_dispositivos_bluetooth" >
+        </activity>
     </application>
 
 </manifest>
