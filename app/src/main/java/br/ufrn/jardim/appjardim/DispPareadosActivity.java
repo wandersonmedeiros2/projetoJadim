@@ -24,6 +24,7 @@ public class DispPareadosActivity extends ActionBarActivity {
     public static String EXTRA_DEVICE_ADDRESS = "device_address";
     private static final int REQUEST_HABILITAR_BT = 1;
     private static final int REQUEST_DISPOSITIVO_PAREADO = 2;
+    private static final int REQUEST_NOVO_DISPOSITIVO = 3;
     private BluetoothAdapter bluetooth;
     private ArrayAdapter disp_pareados;
     private Toolbar mToolbar;
@@ -76,6 +77,12 @@ public class DispPareadosActivity extends ActionBarActivity {
 
                 }
                 break;
+            case REQUEST_NOVO_DISPOSITIVO:
+                if(resultCode == RESULT_OK){
+                    setResult(RESULT_OK,this.getIntent());
+                    finish();
+                }
+                break;
         }
 
     }
@@ -95,7 +102,8 @@ public class DispPareadosActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.menu.menu_disp_pareados) {
+            //star
             return true;
         }
 
