@@ -3,6 +3,7 @@ package br.ufrn.jardim.appjardim;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -25,6 +26,10 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     private Toolbar mToolbar;
     FragmentManager fm;
 
+    private static final int REQUEST_ENABLE_BT = 1;
+    private static final int CADASTRO_VASO = 2;
+    private BluetoothAdapter bluetooth;
+
     //Fragments
     MeuJardimFragment fragment_MeuJardim;
     MeusAlertasFragment fragment_MeusAlertas;
@@ -40,6 +45,8 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bluetooth = BluetoothAdapter.getDefaultAdapter();
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);
@@ -79,10 +86,20 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        switch (id){
+            case R.id.menu_NovoVaso:
+                Intent resultado = new Intent(this,DispPareadosActivity.class);
+                startActivityForResult(resultado,CADASTRO_VASO);
+                break;
+            case R.id.menu_NovoAlerta:
+
+                break;
+        }
+
+        /*/noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -94,6 +111,7 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         switch (position)
         {
             case 1:
+                   mToolbar.setTitle("Meu Jardim");
                    fragment_MeuJardim = new MeuJardimFragment();
                    replaceFragment(fragment_MeuJardim);
                    break;
@@ -129,6 +147,19 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        switch (requestCode){
+            case CADASTRO_VASO:
+                    if(resultCode == RESULT_OK){
+
+                    }
+                  break;
+        }
+
+    }
+
     private void addFragment(Fragment fragment){
         FragmentTransaction ft = fm.beginTransaction();
         ft.add(R.id.cenario,fragment);
@@ -147,6 +178,8 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         ft.remove(fragment);
         ft.commit();
     }
+
+
 
 
 }

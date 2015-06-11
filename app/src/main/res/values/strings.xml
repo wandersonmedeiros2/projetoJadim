@@ -42,5 +42,8 @@
     <string name="Menu_ParearVaso">Parear Vasos</string>
     <string name="title_activity_novo_vaso">NovoVasoActivity</string>
     <string name="title_activity_cadastrar_alerta">CadastrarAlertaActivity</string>
+    <string name="title_activity_pareados">dispositivos pareados</string>
+    <string name="title_activity_disp_pareados">Dispositivos Pareados</string>
+    <string name="buscar_vasos">buscar</string>
 
 </resources>
