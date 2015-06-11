@@ -8,6 +8,8 @@ import android.view.MenuItem;
 
 public class ProcurarDispositivosBluetooth extends ActionBarActivity {
 
+    //private
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

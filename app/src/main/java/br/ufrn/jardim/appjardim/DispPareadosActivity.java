@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class DispPareadosActivity extends ActionBarActivity {
 
-    public static String EXTRA_DEVICE_ADDRESS = "device_address";
+    public  static String EXTRA_DEVICE_ADDRESS = "device_address";
     private static final int REQUEST_HABILITAR_BT = 1;
     private static final int REQUEST_DISPOSITIVO_PAREADO = 2;
     private static final int REQUEST_NOVO_DISPOSITIVO = 3;
@@ -74,7 +74,8 @@ public class DispPareadosActivity extends ActionBarActivity {
                 break;
             case REQUEST_DISPOSITIVO_PAREADO:
                 if(resultCode == RESULT_OK){
-
+                    setResult(RESULT_OK,this.getIntent());
+                    finish();
                 }
                 break;
             case REQUEST_NOVO_DISPOSITIVO:
@@ -103,8 +104,7 @@ public class DispPareadosActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.menu.menu_disp_pareados) {
-            //star
-            return true;
+            startActivityForResult(new Intent(this,ProcurarDispositivosBluetooth.class),REQUEST_NOVO_DISPOSITIVO);
         }
 
         return super.onOptionsItemSelected(item);

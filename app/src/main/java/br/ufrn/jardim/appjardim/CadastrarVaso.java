@@ -4,14 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class CadastrarVaso extends ActionBarActivity {
+
+    private TextView teste;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_vaso);
+
+        teste = (TextView)findViewById(R.id.tvCadastroVaso);
+
+        teste.setText(this.getIntent().getStringExtra(DispPareadosActivity.EXTRA_DEVICE_ADDRESS));
     }
 
 
