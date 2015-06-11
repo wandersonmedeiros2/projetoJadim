@@ -76,15 +76,16 @@ public class DispPareadosActivity extends ActionBarActivity {
                 break;
             case REQUEST_DISPOSITIVO_PAREADO:
                 if(resultCode == RESULT_OK){
-                    setResult(RESULT_OK,this.getIntent());
+                    setResult(RESULT_OK,data);
                     finish();
                 }
                 break;
             case REQUEST_NOVO_DISPOSITIVO:
                 if(resultCode == RESULT_OK){
-                    setResult(RESULT_OK,this.getIntent());
+                    String mac = data.getStringExtra(ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS);
+                    setResult(RESULT_OK,data);
                     Intent i = new Intent(this,CadastrarVaso.class);
-                    i.putExtra(this.getIntent().getStringExtra(ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS),ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS);
+                    i.putExtra(ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS,mac);
                     startActivity(i);
                     finish();
                 }

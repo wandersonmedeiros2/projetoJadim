@@ -14,6 +14,7 @@ import java.util.Random;
 
 import br.ufrn.jardim.adapters.AlertaListAdapter;
 import br.ufrn.jardim.adapters.VasoListAdapter;
+import br.ufrn.jardim.dao.AlertaDAO;
 import br.ufrn.jardim.modelo.Alerta;
 
 
@@ -24,10 +25,13 @@ public class MeusAlertasFragment extends Fragment {
 
     ListView lvAlertas;
     VasoListAdapter adapter;
+    AlertaDAO alertaDAO;
+
 
     public MeusAlertasFragment() {
         // Required empty public constructor
     }
+
 
 
     @Override
@@ -38,20 +42,22 @@ public class MeusAlertasFragment extends Fragment {
 
         lvAlertas = (ListView) view.findViewById(R.id.listAlertas);
         List<Alerta> alertas = new ArrayList<Alerta>();
+        alertaDAO = new AlertaDAO(this.getActivity().getApplicationContext());
+        alertas = alertaDAO.listar();
 
-        Random ram = new Random();
-
-        for(int i = 0; i < 10;i++){
-
-            Alerta alerta = new Alerta("alerta " + String.valueOf(i+1));
-
-            if(ram.nextInt(1024) % 2 == 0)
-                alerta.setAtivo(true);
-            else
-                alerta.setAtivo(false);
-
-            alertas.add(alerta);
-        }
+//        Random ram = new Random();
+//
+//        for(int i = 0; i < 10;i++){
+//
+//            Alerta alerta = new Alerta("alerta " + String.valueOf(i+1));
+//
+//            if(ram.nextInt(1024) % 2 == 0)
+//                alerta.setAtivo(true);
+//            else
+//                alerta.setAtivo(false);
+//
+//            alertas.add(alerta);
+//        }
 
         AlertaListAdapter adapter = new AlertaListAdapter(this.getActivity().getApplicationContext(), alertas);
         lvAlertas.setAdapter(adapter);

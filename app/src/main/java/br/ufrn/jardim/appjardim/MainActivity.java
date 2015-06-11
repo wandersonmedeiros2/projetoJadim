@@ -92,7 +92,7 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
                 startActivityForResult(resultado,CADASTRO_VASO);
                 break;
             case R.id.menu_NovoAlerta:
-
+                   Toast.makeText(this,"Não Implementado",Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -129,7 +129,7 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
             //case 5: i = new Intent(this,Atualizar_vaso.class);break;
             case 6: i = new Intent(this,SobreActivity.class);break;
             case 7: i = null;finish();break;
-            default : Toast.makeText(this, "item no: " + position + "-Selected", Toast.LENGTH_SHORT).show(); i = null;
+            //default : Toast.makeText(this, "item no: " + position + "-Selected", Toast.LENGTH_SHORT).show(); i = null;
         }
 
         if(i != null)
@@ -153,7 +153,7 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         switch (requestCode){
             case CADASTRO_VASO:
                     if(resultCode == RESULT_OK){
-
+                        Toast.makeText(this, "Novo Vaso cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
                     }
                   break;
         }

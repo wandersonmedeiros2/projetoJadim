@@ -19,6 +19,7 @@ import java.util.Random;
 import javax.xml.validation.ValidatorHandler;
 
 import br.ufrn.jardim.adapters.VasoListAdapter;
+import br.ufrn.jardim.dao.VasoDAO;
 import br.ufrn.jardim.modelo.Vaso;
 
 
@@ -29,6 +30,7 @@ public class MeuJardimFragment extends Fragment {
 
 
     ListView lvVasos;
+    VasoDAO vasoDAO;
     VasoListAdapter adapter;
 
     public MeuJardimFragment() {
@@ -43,23 +45,16 @@ public class MeuJardimFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_meu_jardim, container, false);
         lvVasos = (ListView) view.findViewById(R.id.listVasos);
 
-        List<Vaso> vasos = new ArrayList<Vaso>();
 
-        Random ram = new Random();
 
-        for(int i = 0; i < 10;i++){
 
-            Vaso vaso = new Vaso("vaso " + String.valueOf(i+1));
-            vaso.setAtLuminosidade(ram.nextInt(1024));
-            vaso.setAtTemperatura(ram.nextInt(1024));
-            vaso.setAtumidadeAr(ram.nextInt(1024));
-            vaso.setAtUmidadeSolo(ram.nextInt(1024));
-            vasos.add(vaso);
-        }
+        vasoDAO = new VasoDAO(this.getActivity().getApplicationContext());
 
-        final VasoListAdapter adapter = new VasoListAdapter(this.getActivity().getApplicationContext(),vasos);
 
-        lvVasos.setAdapter(adapter);
+
+//        adapter = new VasoListAdapter(this.getActivity().getApplicationContext(),vasos);
+//
+//        lvVasos.setAdapter(adapter);
 
         lvVasos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -74,4 +69,16 @@ public class MeuJardimFragment extends Fragment {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        List<Vaso> vasos = new ArrayList<Vaso>();
+        vasos = vasoDAO.listar();
+
+        adapter = new VasoListAdapter(this.getActivity().getApplicationContext(),vasos);
+
+        lvVasos.setAdapter(adapter);
+
+    }
 }

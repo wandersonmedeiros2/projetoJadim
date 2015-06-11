@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import br.ufrn.jardim.adapters.VasoListAdapter;
+import br.ufrn.jardim.dao.VasoDAO;
 import br.ufrn.jardim.modelo.Vaso;
 
 
@@ -21,6 +22,7 @@ public class MeuJardimActivity extends ActionBarActivity {
 
     Toolbar toobarPrincipal;
     ListView listVasos;
+    VasoDAO vasoDAO;
 
 
     public void inicializaComponentes(){
@@ -28,21 +30,24 @@ public class MeuJardimActivity extends ActionBarActivity {
         toobarPrincipal = (Toolbar) findViewById(R.id.toolbar_actionbar_meu_jardim);
         setSupportActionBar(toobarPrincipal);
 
+
+
         listVasos = (ListView) findViewById(R.id.listVasos);
 
         ArrayList<Vaso> vasos = new ArrayList<Vaso>();
 
-        Random ram = new Random();
 
-        for(int i = 0; i < 10;i++){
-
-            Vaso vaso = new Vaso("vaso " + String.valueOf(i+1));
-            vaso.setAtLuminosidade(ram.nextInt(1024));
-            vaso.setAtTemperatura(ram.nextInt(1024));
-            vaso.setAtumidadeAr(ram.nextInt(1024));
-            vaso.setAtUmidadeSolo(ram.nextInt(1024));
-            vasos.add(vaso);
-        }
+//        Random ram = new Random();
+//
+//        for(int i = 0; i < 10;i++){
+//
+//            Vaso vaso = new Vaso("vaso " + String.valueOf(i+1));
+//            vaso.setAtLuminosidade(ram.nextInt(1024));
+//            vaso.setAtTemperatura(ram.nextInt(1024));
+//            vaso.setAtumidadeAr(ram.nextInt(1024));
+//            vaso.setAtUmidadeSolo(ram.nextInt(1024));
+//            vasos.add(vaso);
+//        }
 
 
 

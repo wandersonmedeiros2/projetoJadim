@@ -195,6 +195,7 @@
     <string name="LabelEmail">E-Mail</string>
     <string name="LabelLogin">Login</string>
     <string name="LabelLuminosidade">Luz</string>
+    <string name="LabelMac">MAC</string>
     <string name="LabelNick">Nick</string>
     <string name="LabelNome">Nome</string>
     <string name="LabelOrientadores">Orientadores</string>

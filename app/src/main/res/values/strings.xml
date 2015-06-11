@@ -47,5 +47,6 @@
     <string name="buscar_vasos">buscar</string>
     <string name="title_activity_cadastrar_vaso">Cadastrar Vaso</string>
     <string name="title_activity_procurar_dispositivos_bluetooth">Pesquisar novos vasos</string>
+    <string name="LabelMac">MAC</string>
 
 </resources>

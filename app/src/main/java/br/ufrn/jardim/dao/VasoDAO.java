@@ -26,10 +26,11 @@ public class VasoDAO {
 
         ContentValues valores = new ContentValues(2);
         valores.put("DESCRICAO", v.getDescricao());
-        valores.put("UMIDADE_AR",v.getAtumidadeAr());
-        valores.put("TEMP",v.getAtTemperatura());
-        valores.put("UMIDADE_SOLO",v.getAtUmidadeSolo());
-        valores.put("LUZ",v.getAtLuminosidade());
+        valores.put("UMIDADE_AR",v.getUmidadeAr());
+        valores.put("TEMP",v.getTemperatura());
+        valores.put("UMIDADE_SOLO",v.getUmidadeSolo());
+        valores.put("LUZ",v.getLuminosidade());
+        valores.put("MAC",v.getMAC());
 
         if(v.getID() > 0){
             db.update("VASO",valores,"id = ?",new String[]{"" + v.getID()});
@@ -57,7 +58,8 @@ public class VasoDAO {
                 vaso.setTemperatura(c.getInt(c.getColumnIndex("TEMP")));
                 vaso.setUmidadeAr(c.getInt(c.getColumnIndex("UMIDADE_AR")));
                 vaso.setUmidadeSolo(c.getInt(c.getColumnIndex("UMIDADE_SOLO")));
-
+                vaso.setMAC(c.getString(c.getColumnIndex("MAC")));
+                vasos.add(vaso);
             }while(c.moveToNext());
         }
         c.close();
@@ -75,6 +77,7 @@ public class VasoDAO {
             vaso.setTemperatura(c.getInt(c.getColumnIndex("TEMP")));
             vaso.setUmidadeAr(c.getInt(c.getColumnIndex("UMIDADE_AR")));
             vaso.setUmidadeSolo(c.getInt(c.getColumnIndex("UMIDADE_SOLO")));
+            vaso.setMAC(c.getString(c.getColumnIndex("MAC")));
         }
         c.close();
         return vaso;

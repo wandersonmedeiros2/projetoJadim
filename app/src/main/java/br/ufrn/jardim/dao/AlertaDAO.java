@@ -52,6 +52,7 @@ public class AlertaDAO {
                 alerta.setID(c.getInt(c.getColumnIndex("ID")));
                 alerta.setDescricao(c.getString(c.getColumnIndex("DESCRICAO")));
                 alerta.setAtivo(c.getInt(c.getColumnIndex("ATIVO")) == 1);
+                alertas.add(alerta);
             }while(c.moveToNext());
         }
         c.close();

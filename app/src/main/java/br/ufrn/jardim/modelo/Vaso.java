@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Vaso implements Serializable {
 
-    public static String[] COLUNAS = new String[]{"ID","DESCRICAO","UMIDADE_AR","TEMP","UMIDADE_SOLO","LUZ"};
+    public static String[] COLUNAS = new String[]{"ID","DESCRICAO","UMIDADE_AR","TEMP","UMIDADE_SOLO","LUZ","MAC"};
 
     //valore configurados
     private int id;
@@ -24,6 +24,8 @@ public class Vaso implements Serializable {
 
     private String imagem;
     private String descricao;
+
+    private String MAC;
 
 
     public Vaso(){
@@ -145,5 +147,13 @@ public class Vaso implements Serializable {
 
     public void setID(int id) {
         this.id = id;
+    }
+
+    public String getMAC() {
+        return MAC;
+    }
+
+    public void setMAC(String MAC) {
+        this.MAC = MAC;
     }
 }
