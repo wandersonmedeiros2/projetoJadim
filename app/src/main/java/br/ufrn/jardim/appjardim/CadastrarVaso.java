@@ -17,8 +17,9 @@ public class CadastrarVaso extends ActionBarActivity {
         setContentView(R.layout.activity_cadastrar_vaso);
 
         teste = (TextView)findViewById(R.id.tvCadastroVaso);
-
-        teste.setText(this.getIntent().getStringExtra(DispPareadosActivity.EXTRA_DEVICE_ADDRESS));
+        if(this.getIntent().getData() != null) {
+            teste.setText(this.getIntent().getStringExtra(DispPareadosActivity.EXTRA_DEVICE_ADDRESS));
+        }
     }
 
 

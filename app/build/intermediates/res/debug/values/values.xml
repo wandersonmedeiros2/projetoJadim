@@ -238,6 +238,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_cadastrar_alerta">CadastrarAlertaActivity</string>
+    <string name="title_activity_cadastrar_vaso">Cadastrar Vaso</string>
     <string name="title_activity_configuracoes">Configuracoes</string>
     <string name="title_activity_disp_pareados">Dispositivos Pareados</string>
     <string name="title_activity_editar_vaso">Editar_vaso</string>
@@ -247,6 +248,7 @@
     <string name="title_activity_meus_alertas">Meus Alertas</string>
     <string name="title_activity_novo_vaso">NovoVasoActivity</string>
     <string name="title_activity_pareados">dispositivos pareados</string>
+    <string name="title_activity_procurar_dispositivos_bluetooth">Pesquisar novos vasos</string>
     <string name="title_activity_sobre">Sobre</string>
     <!-- From: file:/home/wanderson/git/projetoJardim/app/src/main/res/values/styles.xml -->
     <eat-comment/>

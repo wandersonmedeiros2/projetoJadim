@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.ufrn.jardim.appjardim.DispPareadosActivity">
 
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/menu_disp_pareados"
         android:title="@string/buscar_vasos"
         android:orderInCategory="100"
         app:showAsAction="never" />

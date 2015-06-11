@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class DispPareadosActivity extends ActionBarActivity {
     private static final int REQUEST_HABILITAR_BT = 1;
     private static final int REQUEST_DISPOSITIVO_PAREADO = 2;
     private static final int REQUEST_NOVO_DISPOSITIVO = 3;
+    private static final int REQUEST_NOVO_VASO = 4;
     private BluetoothAdapter bluetooth;
     private ArrayAdapter disp_pareados;
     private Toolbar mToolbar;
@@ -81,6 +83,14 @@ public class DispPareadosActivity extends ActionBarActivity {
             case REQUEST_NOVO_DISPOSITIVO:
                 if(resultCode == RESULT_OK){
                     setResult(RESULT_OK,this.getIntent());
+                    Intent i = new Intent(this,CadastrarVaso.class);
+                    i.putExtra(this.getIntent().getStringExtra(ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS),ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS);
+                    startActivity(i);
+                    finish();
+                }
+                break;
+            case REQUEST_NOVO_VASO:
+                if(resultCode == RESULT_OK){
                     finish();
                 }
                 break;
@@ -103,7 +113,7 @@ public class DispPareadosActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.menu.menu_disp_pareados) {
+        if (id == R.id.menu_disp_pareados) {
             startActivityForResult(new Intent(this,ProcurarDispositivosBluetooth.class),REQUEST_NOVO_DISPOSITIVO);
         }
 
