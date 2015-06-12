@@ -39,7 +39,7 @@ public class CadastrarVaso extends ActionBarActivity {
     private InputStream InStream = null;
     private OutputStream OutStream = null;
     String address;
-    private  UUID MY_UUID = /*UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");/*/ UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    private  UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     byte[] read = new byte[1024];
     int bytes;
     private byte[] msg = null;
@@ -104,7 +104,8 @@ public class CadastrarVaso extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_atualizar_vaso) {
+            AtualizarInfoVaso();
             return true;
         }
 
@@ -112,81 +113,104 @@ public class CadastrarVaso extends ActionBarActivity {
     }
 
     public void cadastrarVaso(View view) {
+        boolean semErro = true;
 
-        if(editTemp.getText().toString().isEmpty())
-        {
+        if (editTemp.getText().toString().isEmpty()) {
             editTemp.setError("Campo Obrigatorio");
+            semErro = false;
         }
 
-        if(editTemp.getText().toString().isEmpty())
-        {
+        if (editUmidSolo.getText().toString().isEmpty()) {
             editUmidSolo.setError("Campo Obrigatorio");
+            semErro = false;
         }
 
-        if(editTemp.getText().toString().isEmpty())
-        {
+        if (editLuz.getText().toString().isEmpty()) {
             editLuz.setError("Campo Obrigatorio");
+            semErro = false;
         }
 
-        if(editTemp.getText().toString().isEmpty())
-        {
+        if (editUmidAr.getText().toString().isEmpty()) {
             editUmidAr.setError("Campo Obrigatorio");
+            semErro = false;
         }
 
-        if(v != 1) {
-            Vaso vaso = new Vaso();
+        if (semErro){
+            if (v != 1) {
+                Vaso vaso = new Vaso();
 
-            vaso.setLuminosidade(Integer.valueOf(editLuz.getText().toString()));
-            vaso.setTemperatura(Integer.valueOf(editTemp.getText().toString()));
-            vaso.setUmidadeAr(Integer.valueOf(editUmidAr.getText().toString()));
-            vaso.setAtUmidadeSolo(Integer.valueOf(editUmidSolo.getText().toString()));
-            vaso.setDescricao(editDescricao.getText().toString());
-            vaso.setMAC(editMac.getText().toString());
+                vaso.setLuminosidade(Integer.valueOf(editLuz.getText().toString()));
+                vaso.setTemperatura(Integer.valueOf(editTemp.getText().toString()));
+                vaso.setUmidadeAr(Integer.valueOf(editUmidAr.getText().toString()));
+                vaso.setUmidadeSolo(Integer.valueOf(editUmidSolo.getText().toString()));
+                vaso.setDescricao(editDescricao.getText().toString());
+                vaso.setMAC(editMac.getText().toString());
 
-            VasoDAO vasoDAO = new VasoDAO(this.getApplicationContext());
-            vasoDAO.inserirOuAtualizar(vaso);
-            finish();
+                VasoDAO vasoDAO = new VasoDAO(this.getApplicationContext());
+                vasoDAO.inserirOuAtualizar(vaso);
+                finish();
+            } else {
+                EnviarComando();
+            }
         }
-        else {
-
-            EnviarComando();
-
-        }
-
     }
 
-    private void EnviarComando2() {
-        address = vaso.getMAC();
-        conectar();
-        msg = "P".getBytes();
+    private void AtualizarInfoVaso() {
+        if(Socket == null) {
+            address = vaso.getMAC();
+            conectar();
+        }
+        msg = "G".getBytes();
         try {
             OutStream.write(msg);
-            for(int i =0;i<4;i++) {
+            for(int i = 0;i < 4;i++) {
                 bytes = InStream.read(read);
                 if (read != null) {
                     String readMessage = new String(read);
-                    Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
-                    read = new byte[1024];d
-                    //Ou tentar desta maneira: list_view.setAdapter(null); list_view.setAdapter(adapter);
+                    if (bytes < 2) {
+                        bytes = InStream.read(read);
+                        readMessage += new String(read);
+                    }
+                    //Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
+                    read = new byte[1024];
+                }
+                if(i == 0){
+                    vaso.setAtLuminosidade(Integer.valueOf(editLuz.getText().toString()));
+                }
+                if(i == 1){
+                    vaso.setAtTemperatura(Integer.valueOf(editTemp.getText().toString()));
+                }
+                if(i == 2){
+                    vaso.setAtumidadeAr(Integer.valueOf(editUmidAr.getText().toString()));
+                }
+                if(i == 3){
+                    vaso.setAtUmidadeSolo(Integer.valueOf(editUmidSolo.getText().toString()));
                 }
             }
+            VasoDAO vasoDAO = new VasoDAO(this.getApplicationContext());
+            vasoDAO.inserirOuAtualizar(vaso);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void EnviarComando() {
-        address = vaso.getMAC();
-        conectar();
-        msg = "P".getBytes();
+        if(Socket == null) {
+            address = vaso.getMAC();
+            conectar();
+        }
+        msg = "F".getBytes();
         try {
             OutStream.write(msg);
             bytes = InStream.read(read);
-            if(read != null) {
+            if (read != null) {
                 String readMessage = new String(read);
+                if(bytes < 2){
+                    bytes = InStream.read(read);
+                    readMessage += new String(read);
+                }
                 Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
                 read = new byte[1024];
-                //Ou tentar desta maneira: list_view.setAdapter(null); list_view.setAdapter(adapter);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -197,9 +221,9 @@ public class CadastrarVaso extends ActionBarActivity {
 
         // Obtem o dispositivo bluetooth
         device = bluetooth.getRemoteDevice(address);
-        Toast.makeText(this, "Endereço" + address, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Endereço" + address, Toast.LENGTH_LONG).show();
         try{
-            //MY_UUID = UUID.randomUUID();
+            //MY_UUID = device.getUuids()[0].getUuid();//UUID.randomUUID();
             Socket = device.createRfcommSocketToServiceRecord(MY_UUID);
             Socket.connect(); //conectado
             InStream = Socket.getInputStream();
@@ -208,5 +232,24 @@ public class CadastrarVaso extends ActionBarActivity {
         catch (IOException e){
             Toast.makeText(this, "Ocorreu um erro!" + e, Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        try {
+            if(InStream != null) {
+                InStream.close();
+            }
+            if(OutStream != null){
+                OutStream.close();
+            }
+            if(Socket.isConnected()){
+                Socket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
