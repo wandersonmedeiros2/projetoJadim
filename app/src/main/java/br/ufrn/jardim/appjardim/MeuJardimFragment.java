@@ -2,6 +2,7 @@ package br.ufrn.jardim.appjardim;
 
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -61,7 +62,16 @@ public class MeuJardimFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Vaso v = (Vaso) adapter.getItem(position);
-                Toast.makeText( MeuJardimFragment.this.getActivity(),v.getDescricao(),Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(MeuJardimFragment.this.getActivity(),CadastrarVaso.class);
+
+                i.putExtra("tipo",1);
+                i.putExtra("dv",v);
+                startActivity(i);
+
+
+
+                //Toast.makeText( MeuJardimFragment.this.getActivity(),v.getDescricao(),Toast.LENGTH_LONG).show();
             }
         });
 
