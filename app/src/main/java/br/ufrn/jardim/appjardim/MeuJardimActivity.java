@@ -36,21 +36,6 @@ public class MeuJardimActivity extends ActionBarActivity {
 
         ArrayList<Vaso> vasos = new ArrayList<Vaso>();
 
-
-//        Random ram = new Random();
-//
-//        for(int i = 0; i < 10;i++){
-//
-//            Vaso vaso = new Vaso("vaso " + String.valueOf(i+1));
-//            vaso.setAtLuminosidade(ram.nextInt(1024));
-//            vaso.setAtTemperatura(ram.nextInt(1024));
-//            vaso.setAtumidadeAr(ram.nextInt(1024));
-//            vaso.setAtUmidadeSolo(ram.nextInt(1024));
-//            vasos.add(vaso);
-//        }
-
-
-
         VasoListAdapter adapter = new VasoListAdapter(this, vasos);
         listVasos.setAdapter(adapter);
 

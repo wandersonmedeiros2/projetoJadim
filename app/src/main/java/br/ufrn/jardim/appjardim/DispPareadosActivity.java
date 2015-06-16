@@ -23,7 +23,6 @@ import java.util.Set;
 public class DispPareadosActivity extends ActionBarActivity {
 
     public  static String EXTRA_DEVICE_ADDRESS = "device_address";
-    private static final int REQUEST_HABILITAR_BT = 1;
     private static final int REQUEST_DISPOSITIVO_PAREADO = 2;
     private static final int REQUEST_NOVO_DISPOSITIVO = 3;
     private static final int REQUEST_NOVO_VASO = 4;
@@ -40,15 +39,12 @@ public class DispPareadosActivity extends ActionBarActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-
-        bluetooth = BluetoothAdapter.getDefaultAdapter();
-        checarBluetooth();
-
         disp_pareados = new ArrayAdapter(this,R.layout.nome_dispositivo);
 
         ListView pareados_lista = (ListView)findViewById(R.id.listDispPareados);
 
         // Pega o conjunto de dispositivos ja pareados
+        bluetooth = BluetoothAdapter.getDefaultAdapter();
 
         Set<BluetoothDevice> pareados = bluetooth.getBondedDevices();
 
@@ -69,11 +65,6 @@ public class DispPareadosActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
-            case REQUEST_HABILITAR_BT :
-                if(resultCode == RESULT_OK){
-                    //checarBluetooth();
-                }
-                break;
             case REQUEST_DISPOSITIVO_PAREADO:
                 if(resultCode == RESULT_OK){
                     setResult(RESULT_OK,data);
@@ -121,11 +112,12 @@ public class DispPareadosActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void checarBluetooth(){
-        if(!bluetooth.isEnabled()){
-            startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE),0);
-        }
-    }
+
+
+//        if(!bluetooth.isEnabled()){
+//            startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE),0);
+//        }
+
 
     private AdapterView.OnItemClickListener disp_pareadosListener = new AdapterView.OnItemClickListener() {
         @Override
@@ -135,12 +127,11 @@ public class DispPareadosActivity extends ActionBarActivity {
             String info = ((TextView) view).getText().toString();
             String address = info.substring(info.length() - 17);
 
-            Intent intent = new Intent();
-            intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
-            setResult(RESULT_OK,intent);
-
-            bluetooth.cancelDiscovery();
+            Intent i = new Intent(DispPareadosActivity.this,CadastrarVaso.class);
+            i.putExtra(ProcurarDispositivosBluetooth.EXTRA_DEVICE_ADDRESS,address);
+            startActivity(i);
             finish();
+
         }
     };
 }

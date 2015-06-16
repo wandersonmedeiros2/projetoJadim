@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.ufrn.jardim.appjardim" >
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -42,14 +42,6 @@
             android:screenOrientation="locked" >
         </activity>
         <activity
-            android:name=".Editar_vaso"
-            android:label="@string/title_activity_editar_vaso" >
-        </activity>
-        <activity
-            android:name=".PareadosActivity"
-            android:label="@string/title_activity_pareados" >
-        </activity>
-        <activity
             android:name=".CadastrarAlertaActivity"
             android:label="@string/title_activity_cadastrar_alerta" >
         </activity>
@@ -64,6 +56,10 @@
         <activity
             android:name=".ProcurarDispositivosBluetooth"
             android:label="@string/title_activity_procurar_dispositivos_bluetooth" >
+        </activity>
+        <activity
+            android:name=".VisualizarVaso"
+            android:label="@string/title_activity_visualizar_vaso" >
         </activity>
     </application>
 

@@ -46,16 +46,8 @@ public class MeuJardimFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_meu_jardim, container, false);
         lvVasos = (ListView) view.findViewById(R.id.listVasos);
 
-
-
-
         vasoDAO = new VasoDAO(this.getActivity().getApplicationContext());
 
-
-
-//        adapter = new VasoListAdapter(this.getActivity().getApplicationContext(),vasos);
-//
-//        lvVasos.setAdapter(adapter);
 
         lvVasos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -63,15 +55,10 @@ public class MeuJardimFragment extends Fragment {
 
                 Vaso v = (Vaso) adapter.getItem(position);
 
-                Intent i = new Intent(MeuJardimFragment.this.getActivity(),CadastrarVaso.class);
+                Intent i = new Intent(MeuJardimFragment.this.getActivity(),VisualizarVaso.class);
 
-                i.putExtra("tipo",1);
-                i.putExtra("dv",v);
+                i.putExtra("vaso",v);
                 startActivity(i);
-
-
-
-                //Toast.makeText( MeuJardimFragment.this.getActivity(),v.getDescricao(),Toast.LENGTH_LONG).show();
             }
         });
 

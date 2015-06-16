@@ -62,10 +62,10 @@ public class VasoListAdapter extends ArrayAdapter<Vaso> {
             imagemPlanta.setImageResource(R.drawable.jardim);
 
         lbDescrcao.setText(vaso.getDescricao());
-        lbUmidAr.setText(String.valueOf(vaso.getAtumidadeAr()));
-        lbUmidSolo.setText(String.valueOf(vaso.getAtUmidadeSolo()));
-        lbTemp.setText(String.valueOf(vaso.getAtTemperatura()));
-        lbLuz.setText(String.valueOf(vaso.getAtLuminosidade()));
+        lbUmidAr.setText(String.valueOf(vaso.getUmidadeAr()));
+        lbUmidSolo.setText(String.valueOf(vaso.getUmidadeSolo()));
+        lbTemp.setText(String.valueOf(vaso.getTemperatura()));
+        lbLuz.setText(String.valueOf(vaso.getLuminosidade()));
 
         return linhaVasoAdapter;
 

@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         mToolbar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()){
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                 }
                 return false;
@@ -86,13 +86,20 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.menu_NovoVaso:
-                Intent resultado = new Intent(this,DispPareadosActivity.class);
-                startActivityForResult(resultado,CADASTRO_VASO);
+                //checarBluetooth();
+                 if(!bluetooth.isEnabled()){
+                    startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE),REQUEST_ENABLE_BT);
+                 }
+                else{
+                     Intent resultado = new Intent(this, DispPareadosActivity.class);
+                     startActivityForResult(resultado, CADASTRO_VASO);
+                 }
+
                 break;
             case R.id.menu_NovoAlerta:
-                   Toast.makeText(this,"Não Implementado",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Não Implementado", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -108,13 +115,12 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     public void onNavigationDrawerItemSelected(int position) {
 
         Intent i = null;
-        switch (position)
-        {
+        switch (position) {
             case 1:
-                   mToolbar.setTitle("Meu Jardim");
-                   fragment_MeuJardim = new MeuJardimFragment();
-                   replaceFragment(fragment_MeuJardim);
-                   break;
+                mToolbar.setTitle("Meu Jardim");
+                fragment_MeuJardim = new MeuJardimFragment();
+                replaceFragment(fragment_MeuJardim);
+                break;
             case 2:
                 fragment_MeusAlertas = new MeusAlertasFragment();
                 replaceFragment(fragment_MeusAlertas);
@@ -126,14 +132,18 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
             case 4:
                 fragment_Configuracoes = new ConfiguracoesFragment();
                 replaceFragment(fragment_Configuracoes);
-            //case 5: i = new Intent(this,Atualizar_vaso.class);break;
-            case 6: i = new Intent(this,SobreActivity.class);break;
-            case 7: i = null;finish();break;
+                //case 5: i = new Intent(this,Atualizar_vaso.class);break;
+            case 6:
+                i = new Intent(this, SobreActivity.class);
+                break;
+            case 7:
+                i = null;
+                finish();
+                break;
             //default : Toast.makeText(this, "item no: " + position + "-Selected", Toast.LENGTH_SHORT).show(); i = null;
         }
 
-        if(i != null)
-        {
+        if (i != null) {
             startActivity(i);
         }
     }
@@ -150,36 +160,38 @@ public class MainActivity extends ActionBarActivity implements DrawerCallbacks {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        switch (requestCode){
+        switch (requestCode) {
             case CADASTRO_VASO:
-                    if(resultCode == RESULT_OK){
-                        Toast.makeText(this, "Novo Vaso cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
-                    }
-                  break;
+                if (resultCode == RESULT_OK) {
+                    Toast.makeText(this, "Novo Vaso cadastrado com Sucesso!", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case REQUEST_ENABLE_BT:
+                if(resultCode == RESULT_OK){
+                    Intent resultado = new Intent(this, DispPareadosActivity.class);
+                    startActivityForResult(resultado, CADASTRO_VASO);
+                }
         }
 
     }
 
-    private void addFragment(Fragment fragment){
+    private void addFragment(Fragment fragment) {
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.cenario,fragment);
+        ft.add(R.id.cenario, fragment);
         ft.commit();
     }
 
 
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.cenario,fragment);
+        ft.replace(R.id.cenario, fragment);
         ft.commit();
     }
 
-    private void removeFragment(Fragment fragment){
+    private void removeFragment(Fragment fragment) {
         FragmentTransaction ft = fm.beginTransaction();
         ft.remove(fragment);
         ft.commit();
     }
-
-
-
 
 }

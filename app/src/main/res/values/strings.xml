@@ -49,5 +49,10 @@
     <string name="title_activity_procurar_dispositivos_bluetooth">Pesquisar novos vasos</string>
     <string name="LabelMac">MAC</string>
     <string name="atualizar_vaso">Atualizar valores</string>
+    <string name="title_activity_visualizar_vaso">Visualizar Vasos</string>
+    <string name="action_editar">Editar Vaso</string>
+    <string name="action_excluir_vaso">Excluir</string>
+    <string name="action_excluir_atualizar">Atualizar</string>
+    <string name="action_regar_vaso">Regar</string>
 
 </resources>

@@ -6,12 +6,10 @@ import android.bluetooth.BluetoothSocket;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -34,10 +32,10 @@ public class CadastrarVaso extends ActionBarActivity {
     private EditText editDescricao;
 
     BluetoothAdapter bluetooth;
-    private BluetoothSocket Socket = null;
+    private BluetoothSocket socket = null;
     private BluetoothDevice device = null;
-    private InputStream InStream = null;
-    private OutputStream OutStream = null;
+    private InputStream inputStream = null;
+    private OutputStream outStream = null;
     String address;
     private  UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     byte[] read = new byte[1024];
@@ -156,19 +154,19 @@ public class CadastrarVaso extends ActionBarActivity {
     }
 
     private void AtualizarInfoVaso() {
-        if(Socket == null) {
+        if(socket == null) {
             address = vaso.getMAC();
             conectar();
         }
         msg = "G".getBytes();
         try {
-            OutStream.write(msg);
+            outStream.write(msg);
             for(int i = 0;i < 4;i++) {
-                bytes = InStream.read(read);
+                bytes = inputStream.read(read);
                 if (read != null) {
                     String readMessage = new String(read);
                     if (bytes < 2) {
-                        bytes = InStream.read(read);
+                        bytes = inputStream.read(read);
                         readMessage += new String(read);
                     }
                     //Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
@@ -195,18 +193,18 @@ public class CadastrarVaso extends ActionBarActivity {
     }
 
     private void EnviarComando() {
-        if(Socket == null) {
+        if(socket == null) {
             address = vaso.getMAC();
             conectar();
         }
         msg = "F".getBytes();
         try {
-            OutStream.write(msg);
-            bytes = InStream.read(read);
+            outStream.write(msg);
+            bytes = inputStream.read(read);
             if (read != null) {
                 String readMessage = new String(read);
                 if(bytes < 2){
-                    bytes = InStream.read(read);
+                    bytes = inputStream.read(read);
                     readMessage += new String(read);
                 }
                 Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
@@ -224,10 +222,10 @@ public class CadastrarVaso extends ActionBarActivity {
         //Toast.makeText(this, "Endereço" + address, Toast.LENGTH_LONG).show();
         try{
             //MY_UUID = device.getUuids()[0].getUuid();//UUID.randomUUID();
-            Socket = device.createRfcommSocketToServiceRecord(MY_UUID);
-            Socket.connect(); //conectado
-            InStream = Socket.getInputStream();
-            OutStream = Socket.getOutputStream();
+            socket = device.createRfcommSocketToServiceRecord(MY_UUID);
+            socket.connect(); //conectado
+            inputStream = socket.getInputStream();
+            outStream = socket.getOutputStream();
         }
         catch (IOException e){
             Toast.makeText(this, "Ocorreu um erro!" + e, Toast.LENGTH_LONG).show();
@@ -235,20 +233,24 @@ public class CadastrarVaso extends ActionBarActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            if(InStream != null) {
-                InStream.close();
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (socket != null) {
+
+            try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (outStream != null) {
+                    outStream.close();
+                }
+                if (socket.isConnected()) {
+                    socket.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            if(OutStream != null){
-                OutStream.close();
-            }
-            if(Socket.isConnected()){
-                Socket.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
     }
