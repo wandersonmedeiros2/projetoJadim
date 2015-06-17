@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
+import br.ufrn.jardim.adapters.GerenciarBluetooth;
 import br.ufrn.jardim.dao.VasoDAO;
 import br.ufrn.jardim.modelo.Vaso;
 
@@ -31,16 +32,7 @@ public class CadastrarVaso extends ActionBarActivity {
     private EditText editLuz;
     private EditText editDescricao;
 
-    BluetoothAdapter bluetooth;
-    private BluetoothSocket socket = null;
-    private BluetoothDevice device = null;
-    private InputStream inputStream = null;
-    private OutputStream outStream = null;
-    String address;
-    private  UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-    byte[] read = new byte[1024];
-    int bytes;
-    private byte[] msg = null;
+    GerenciarBluetooth gerenciarBluetooth;
 
     int v = 0;
     Vaso vaso;
@@ -53,7 +45,7 @@ public class CadastrarVaso extends ActionBarActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        bluetooth  = BluetoothAdapter.getDefaultAdapter();
+        gerenciarBluetooth  = new GerenciarBluetooth(this.getApplicationContext());
 
 
         editMac = (EditText)findViewById(R.id.editMac);
@@ -103,7 +95,7 @@ public class CadastrarVaso extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_atualizar_vaso) {
-            AtualizarInfoVaso();
+            gerenciarBluetooth.AtualizarInfoVaso(vaso);
             return true;
         }
 
@@ -148,87 +140,8 @@ public class CadastrarVaso extends ActionBarActivity {
                 vasoDAO.inserirOuAtualizar(vaso);
                 finish();
             } else {
-                EnviarComando();
+                gerenciarBluetooth.EnviarComando(vaso);
             }
-        }
-    }
-
-    private void AtualizarInfoVaso() {
-        if(socket == null) {
-            address = vaso.getMAC();
-            conectar();
-        }
-        msg = "G".getBytes();
-        try {
-            outStream.write(msg);
-            for(int i = 0;i < 4;i++) {
-                bytes = inputStream.read(read);
-                if (read != null) {
-                    String readMessage = new String(read);
-                    if (bytes < 2) {
-                        bytes = inputStream.read(read);
-                        readMessage += new String(read);
-                    }
-                    //Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
-                    read = new byte[1024];
-                }
-                if(i == 0){
-                    vaso.setAtLuminosidade(Integer.valueOf(editLuz.getText().toString()));
-                }
-                if(i == 1){
-                    vaso.setAtTemperatura(Integer.valueOf(editTemp.getText().toString()));
-                }
-                if(i == 2){
-                    vaso.setAtumidadeAr(Integer.valueOf(editUmidAr.getText().toString()));
-                }
-                if(i == 3){
-                    vaso.setAtUmidadeSolo(Integer.valueOf(editUmidSolo.getText().toString()));
-                }
-            }
-            VasoDAO vasoDAO = new VasoDAO(this.getApplicationContext());
-            vasoDAO.inserirOuAtualizar(vaso);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void EnviarComando() {
-        if(socket == null) {
-            address = vaso.getMAC();
-            conectar();
-        }
-        msg = "F".getBytes();
-        try {
-            outStream.write(msg);
-            bytes = inputStream.read(read);
-            if (read != null) {
-                String readMessage = new String(read);
-                if(bytes < 2){
-                    bytes = inputStream.read(read);
-                    readMessage += new String(read);
-                }
-                Toast.makeText(this, readMessage, Toast.LENGTH_SHORT).show();
-                read = new byte[1024];
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void conectar() {
-
-        // Obtem o dispositivo bluetooth
-        device = bluetooth.getRemoteDevice(address);
-        //Toast.makeText(this, "Endereço" + address, Toast.LENGTH_LONG).show();
-        try{
-            //MY_UUID = device.getUuids()[0].getUuid();//UUID.randomUUID();
-            socket = device.createRfcommSocketToServiceRecord(MY_UUID);
-            socket.connect(); //conectado
-            inputStream = socket.getInputStream();
-            outStream = socket.getOutputStream();
-        }
-        catch (IOException e){
-            Toast.makeText(this, "Ocorreu um erro!" + e, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -236,22 +149,7 @@ public class CadastrarVaso extends ActionBarActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if (socket != null) {
-
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-                if (outStream != null) {
-                    outStream.close();
-                }
-                if (socket.isConnected()) {
-                    socket.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        gerenciarBluetooth.desconectar();
 
     }
 }

@@ -234,7 +234,7 @@
     <string name="action_excluir_atualizar">Atualizar</string>
     <string name="action_excluir_vaso">Excluir</string>
     <string name="action_novoVaso">Novo Vaso</string>
-    <string name="action_regar_vaso"/>
+    <string name="action_regar_vaso">Regar</string>
     <string name="action_settings">Configurações</string>
     <string name="app_name">Connected Garden</string>
     <string name="atualizar_vaso">Atualizar valores</string>

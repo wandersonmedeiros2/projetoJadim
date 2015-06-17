@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import br.ufrn.jardim.adapters.GerenciarBluetooth;
 import br.ufrn.jardim.dao.VasoDAO;
 import br.ufrn.jardim.modelo.Vaso;
 
@@ -21,6 +22,7 @@ public class VisualizarVaso extends ActionBarActivity {
     Toolbar mToolbar;
     Vaso vaso;
     VasoDAO vasoDAO;
+    GerenciarBluetooth gerenciarBluetooth;
 
 
     @Override
@@ -32,6 +34,8 @@ public class VisualizarVaso extends ActionBarActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar_visualiza_vaso);
         setSupportActionBar(mToolbar);
+
+        gerenciarBluetooth = new GerenciarBluetooth(this.getApplicationContext());
 
         labelDescricao = (TextView) findViewById(R.id.textView10);
         labelTemp = (TextView) findViewById(R.id.labelTemp);
@@ -77,12 +81,15 @@ public class VisualizarVaso extends ActionBarActivity {
                 finish();
                 break;
             case R.id.action_Regar:
-                vasoDAO.remover(vaso);
-                finish();
+                gerenciarBluetooth.EnviarComando(vaso);
                 break;
             case R.id.action_atualizar:
-                vasoDAO.remover(vaso);
-                finish();
+                gerenciarBluetooth.AtualizarInfoVaso(vaso);
+                labelDescricao.setText(vaso.getDescricao().toString());
+                labelTemp.setText(String.valueOf(vaso.getTemperatura()));
+                labelUmidSolo.setText(String.valueOf(vaso.getUmidadeSolo()));
+                labelLuz.setText(String.valueOf(vaso.getLuminosidade()));
+                labelUmidAr.setText(String.valueOf(vaso.getUmidadeAr()));
                 break;
         }
 
